@@ -78,7 +78,7 @@ a:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radi
 }
 .intro{
   display:grid;
-  grid-template-columns:14rem minmax(0, 1fr);
+  grid-template-columns:16.5rem minmax(0, 1fr);
   gap:2.75rem;
   align-items:start;
 }
@@ -255,7 +255,7 @@ details.abstract summary:focus-visible{outline:2px solid var(--signal); outline-
   .nav a{font-size:0.875rem; white-space:nowrap}
   .wrap{padding:2.5rem 1.25rem 4rem}
   .intro{grid-template-columns:1fr; gap:1.75rem}
-  .portrait{max-width:11rem}
+  .portrait{max-width:12.5rem}
   .section{grid-template-columns:1fr; gap:0.9rem; padding:2rem 0}
   .section-label{padding-top:0}
   .band{height:36px}
