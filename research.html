@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Saptashya Ghosh</title>
+<meta name="description" content="Working papers, policy papers, and master's thesis of Saptashya Ghosh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="research.html" aria-current="page">Research</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <section class="section">
+    <h2 class="section-label">Working papers</h2>
+    <div class="section-body">
+      <article class="paper">
+        <h3 class="paper-title">
+          <!-- Replace # with the SSRN or PDF link when you have one -->
+          <a href="#">AI at the Fingertips: How Does LLM App Adoption Reshape Smartphone Usage?</a>
+        </h3>
+        <p class="paper-authors">Saptashya Ghosh, Saharsh Agarwal</p>
+        <p class="paper-venue"><span class="status">Under review</span> &nbsp;·&nbsp; Information Systems Research</p>
+
+        <details class="abstract">
+          <summary>Abstract</summary>
+          <p class="abstract-text">
+            The rapid diffusion of large language models (LLMs) is reshaping how users
+            interact with digital technologies. As LLMs become available through
+            dedicated smartphone applications, they may substitute for existing
+            applications or complement them by encouraging broader digital engagement.
+            Using proprietary smartphone usage data from Android users in India and a
+            staggered difference-in-differences design, we document three findings.
+            First, adoption and sustained usage follow different demographic patterns:
+            younger users and men are more likely to adopt, but conditional on adoption,
+            women are more likely to become sustained users. Second, sustained usage
+            concentrates smartphone activity on a smaller set of applications, with
+            lower app diversity persisting for up to 79 weeks after adoption. Third,
+            substitution is concentrated in categories whose tasks overlap with LLM
+            capabilities, namely web browsers, search engines, and writing applications,
+            while social, e-commerce, and other transactional categories remain
+            unaffected. We find little evidence of complementarity. These findings
+            suggest that LLMs are emerging as a new gateway to online information, with
+            implications for market definition, competition policy, and the platforms
+            that depend on search traffic.
+          </p>
+        </details>
+
+        <figure class="band-figure">
+          <div class="band" id="band" aria-hidden="true"></div>
+          <figcaption class="band-caption">
+            Weekly attention across apps, before and after sustained LLM adoption.
+          </figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label">Policy papers</h2>
+    <div class="section-body">
+      <article class="paper">
+        <h3 class="paper-title">
+          <a href="https://drive.google.com/file/d/1seu558JE9u0XIVNvUUyqjzw0HBl2gWT9/view?usp=drive_link">Climate Change and Household Finance</a>
+        </h3>
+        <p class="paper-authors">Saptashya Ghosh, Sankalp Mathur</p>
+        <p class="paper-venue">India Finance Report 2025 &nbsp;·&nbsp; CAFRAL, Reserve Bank of India</p>
+
+        <details class="abstract">
+          <summary>Abstract</summary>
+          <p class="abstract-text">
+            Climate change presents significant challenges to household finances.
+            Expanding financial access to households is crucial for climate adaptation
+            and resilience. Climate vulnerable areas have seen slower growth in loans
+            such as business and mortgage loans, especially by traditional financial
+            intermediaries, while microfinance loans have shown notable growth. FinTechs
+            have recently stepped in, demonstrating how technology can enhance financial
+            support to households impacted by adverse climate shocks.
+          </p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label">Master's thesis</h2>
+    <div class="section-body">
+      <article class="paper">
+        <h3 class="paper-title">
+          <a href="https://drive.google.com/file/d/1CGIdAcZbgf23_TzAub4NtQuCnGz4B6Pu/view?usp=drive_link">Do Political Cycles Alarm Officers? Evidence from the Indian Bureaucracy</a>
+        </h3>
+        <p class="paper-venue">
+          M.S. Economics, Shiv Nadar University &nbsp;·&nbsp;
+          Advised by Arka Roy Chaudhuri
+        </p>
+        <details class="abstract">
+          <summary>Abstract</summary>
+          <p class="abstract-text">
+            Bureaucrats are central to policy implementation, and the decisions they make
+            carry consequences for a wide range of societal outcomes. Yet bureaucratic
+            careers remain exposed to political interference, institutional instability,
+            and corruption, and officers' work is frequently disrupted by political
+            processes. This paper develops an empirical framework for identifying the
+            effect of the electoral cycle on bureaucratic transfers. Using monthly
+            variation in a comprehensive panel of bureaucratic officers spanning 1950 to
+            2020, we document that transfer decisions are significantly shaped by the
+            timing of elections. Transfers rise sharply in the eleven months following an
+            election relative to the remainder of the electoral cycle.
+          </p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+</div>
+
+<p class="colophon">Last updated August 2026 · Hyderabad, India</p>
+
+<script>
+(function () {
+  var band = document.getElementById('band');
+  if (!band) return;
+  var shares = [22, 14, 9, 7, 5, 4, 4, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
+  var frag = document.createDocumentFragment();
+  shares.forEach(function (s, i) {
+    var bar = document.createElement('span');
+    bar.style.setProperty('--i', i);
+    if (s >= 14) bar.setAttribute('data-hot', '2');
+    else if (s >= 5) bar.setAttribute('data-hot', '1');
+    bar.dataset.share = s;
+    frag.appendChild(bar);
+  });
+  band.appendChild(frag);
+  function settle() {
+    band.classList.add('settled');
+    Array.prototype.forEach.call(band.children, function (bar) {
+      bar.style.flexGrow = bar.dataset.share;
+    });
+  }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) settle();
+  else setTimeout(settle, 700);
+})();
+</script>
+</body>
+</html>

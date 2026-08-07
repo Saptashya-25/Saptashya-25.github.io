@@ -1,0 +1,268 @@
+:root{
+  --ink:        #131A24;
+  --ink-soft:   #4A5663;
+  --ink-faint:  #7E8994;
+  --paper:      #FCFCFD;
+  --rule:       #E1E6EA;
+  --rule-soft:  #EDF1F4;
+  --signal:     #2F5FE0;
+  --signal-dim: #A9BEF2;
+
+  --nav-bg:     #4A4448;
+  --nav-ink:    #FFFFFF;
+  --nav-active: #F5C542;
+
+  --display: "Newsreader", Georgia, serif;
+  --body:    "IBM Plex Sans", system-ui, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, monospace;
+
+  --measure: 40rem;
+  --rail:    9.5rem;
+  --gap:     2.5rem;
+  --page:    52rem;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--signal-dim)}
+a:hover{border-bottom-color:var(--signal); color:var(--signal)}
+a:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radius:2px}
+
+/* ---------- Navigation ---------- */
+.nav{background:var(--nav-bg)}
+.nav ul{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:0 1.5rem;
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:2.25rem;
+}
+.nav a{
+  display:block;
+  padding:1.05rem 0 0.75rem;
+  color:var(--nav-ink);
+  font-size:0.9375rem;
+  font-weight:500;
+  letter-spacing:0.005em;
+  border-bottom:4px solid transparent;
+}
+.nav a:hover{color:var(--nav-ink); border-bottom-color:rgba(255,255,255,0.35)}
+.nav a[aria-current="page"]{border-bottom-color:var(--nav-active)}
+.nav a:focus-visible{outline:2px solid var(--nav-active); outline-offset:-4px}
+
+.wrap{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:3.5rem 1.5rem 6rem;
+}
+
+/* ---------- Home ---------- */
+.name{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:clamp(2.5rem, 7vw, 3.75rem);
+  line-height:1.02;
+  letter-spacing:-0.018em;
+  margin:0 0 2.25rem;
+}
+.intro{
+  display:grid;
+  grid-template-columns:14rem minmax(0, 1fr);
+  gap:2.75rem;
+  align-items:start;
+}
+.portrait{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:2px;
+  background:var(--rule-soft);
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+}
+.intro p{margin:0 0 1.1rem}
+.intro p:last-of-type{margin-bottom:0}
+
+.contact{
+  margin:1.75rem 0 0;
+  padding-top:1.25rem;
+  border-top:1px solid var(--rule);
+  font-family:var(--mono);
+  font-size:0.8125rem;
+  letter-spacing:0.01em;
+}
+.contact .k{color:var(--ink-faint); margin-right:0.5rem}
+
+/* ---------- CV page ---------- */
+.cv-panel{
+  min-height:26rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:3rem 1rem;
+}
+.cv-heading{
+  font-family:var(--mono);
+  font-size:0.6875rem;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  color:var(--ink-faint);
+  margin:0 0 1.5rem;
+}
+.cv-mark{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:clamp(6rem, 22vw, 11rem);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  border-bottom:0;
+  display:inline-block;
+  transition:color 160ms ease;
+}
+.cv-mark:hover{color:var(--signal); border-bottom:0}
+.cv-mark:focus-visible{outline:2px solid var(--signal); outline-offset:8px; border-radius:4px}
+.cv-note{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--ink-faint);
+  letter-spacing:0.02em;
+  margin:1.75rem 0 0;
+}
+
+/* ---------- Research sections ---------- */
+.section{
+  display:grid;
+  grid-template-columns:var(--rail) minmax(0, 1fr);
+  gap:var(--gap);
+  padding:2.5rem 0;
+  border-top:1px solid var(--rule);
+}
+.section:first-of-type{border-top:0; padding-top:0}
+.section-label{
+  font-family:var(--mono);
+  font-size:0.6875rem;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.11em;
+  color:var(--ink-faint);
+  line-height:1.5;
+  padding-top:0.35rem;
+  margin:0;
+}
+.section-body > *:first-child{margin-top:0}
+.section-body > *:last-child{margin-bottom:0}
+
+.paper{margin:0 0 2.25rem}
+.paper:last-child{margin-bottom:0}
+.paper-title{
+  font-family:var(--display);
+  font-size:1.1875rem;
+  font-weight:500;
+  line-height:1.32;
+  letter-spacing:-0.004em;
+  margin:0 0 0.3rem;
+}
+.paper-authors{margin:0 0 0.3rem; color:var(--ink-soft); font-size:0.9375rem}
+.paper-venue{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  letter-spacing:0.015em;
+  color:var(--ink-faint);
+  margin:0;
+}
+.paper-venue .status{color:var(--signal)}
+
+details.abstract{margin:0.7rem 0 0}
+details.abstract summary{
+  font-family:var(--mono);
+  font-size:0.6875rem;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+  color:var(--ink-faint);
+  cursor:pointer;
+  display:inline-block;
+  padding:0.15rem 0;
+  list-style:none;
+}
+details.abstract summary::-webkit-details-marker{display:none}
+details.abstract summary::before{content:"+ "; color:var(--signal)}
+details.abstract[open] summary::before{content:"\2212 "}
+details.abstract summary:hover{color:var(--signal)}
+details.abstract summary:focus-visible{outline:2px solid var(--signal); outline-offset:3px}
+.abstract-text{
+  font-size:0.9375rem;
+  line-height:1.65;
+  color:var(--ink-soft);
+  border-left:2px solid var(--rule);
+  padding-left:1rem;
+  margin:0.75rem 0 0;
+  max-width:var(--measure);
+}
+
+/* ---------- Figure: the entropy result ---------- */
+.band-figure{margin:1.25rem 0 0; max-width:var(--measure)}
+.band{display:flex; gap:2px; height:44px; width:100%}
+.band span{
+  flex:1 1 0;
+  background:var(--signal-dim);
+  border-radius:1px;
+  transition:flex-grow 1400ms cubic-bezier(.22,.61,.36,1),
+             background-color 1400ms ease;
+  transition-delay:calc(var(--i) * 28ms);
+}
+.band.settled span{background:var(--rule-soft)}
+.band.settled span[data-hot="1"]{background:var(--signal-dim)}
+.band.settled span[data-hot="2"]{background:var(--signal)}
+.band-caption{
+  font-family:var(--mono);
+  font-size:0.6875rem;
+  line-height:1.55;
+  color:var(--ink-faint);
+  letter-spacing:0.02em;
+  margin:0.6rem 0 0;
+}
+
+/* ---------- Footer ---------- */
+.colophon{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:1.5rem 1.5rem 3rem;
+  border-top:1px solid var(--rule);
+  font-family:var(--mono);
+  font-size:0.6875rem;
+  color:var(--ink-faint);
+  letter-spacing:0.02em;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:720px){
+  .nav ul{gap:1.25rem; justify-content:flex-start; overflow-x:auto; padding:0 1.25rem}
+  .nav a{font-size:0.875rem; white-space:nowrap}
+  .wrap{padding:2.5rem 1.25rem 4rem}
+  .intro{grid-template-columns:1fr; gap:1.75rem}
+  .portrait{max-width:11rem}
+  .section{grid-template-columns:1fr; gap:0.9rem; padding:2rem 0}
+  .section-label{padding-top:0}
+  .band{height:36px}
+  .cv-panel{min-height:18rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .band span{transition:none}
+  .cv-mark{transition:none}
+}

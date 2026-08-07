@@ -5,457 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saptashya Ghosh</title>
 <meta name="description" content="Saptashya Ghosh is a Research Associate in the Information Systems area at the Indian School of Business, studying digital platforms and their welfare effects in digital markets.">
-
 <meta property="og:title" content="Saptashya Ghosh">
 <meta property="og:description" content="Research Associate, Information Systems, Indian School of Business. Digital platforms and their welfare effects in digital markets.">
 <meta property="og:type" content="profile">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --ink:        #131A24;
-  --ink-soft:   #4A5663;
-  --ink-faint:  #7E8994;
-  --paper:      #FCFCFD;
-  --rule:       #E1E6EA;
-  --rule-soft:  #EDF1F4;
-  --signal:     #2F5FE0;
-  --signal-dim: #A9BEF2;
-
-  --display: "Newsreader", Georgia, serif;
-  --body:    "IBM Plex Sans", system-ui, sans-serif;
-  --mono:    "IBM Plex Mono", ui-monospace, monospace;
-
-  --measure: 40rem;
-  --rail:    9.5rem;
-  --gap:     2.5rem;
-}
-
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:16px;
-  line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--signal-dim)}
-a:hover{border-bottom-color:var(--signal); color:var(--signal)}
-a:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radius:2px}
-
-.wrap{
-  max-width:calc(var(--rail) + var(--gap) + var(--measure));
-  margin:0 auto;
-  padding:4.5rem 1.5rem 6rem;
-}
-
-/* ---------- Header ---------- */
-.name{
-  font-family:var(--display);
-  font-weight:500;
-  font-size:clamp(2.5rem, 7vw, 3.75rem);
-  line-height:1.02;
-  letter-spacing:-0.018em;
-  margin:0 0 2.25rem;
-}
-
-.intro{
-  display:grid;
-  grid-template-columns:13.5rem minmax(0, 1fr);
-  gap:2.5rem;
-  align-items:start;
-}
-.portrait{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:2px;
-  background:var(--rule-soft);
-  aspect-ratio:4 / 5;
-  object-fit:cover;
-}
-.intro p{margin:0 0 1rem}
-.intro p:last-child{margin-bottom:0}
-
-.links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.45rem 1.25rem;
-  font-family:var(--mono);
-  font-size:0.8125rem;
-  letter-spacing:0.01em;
-  margin:1.5rem 0 0;
-  padding:0;
-  list-style:none;
-}
-.links .meta{color:var(--ink-faint)}
-
-/* ---------- Section grid: echoes the CV's label column ---------- */
-.section{
-  display:grid;
-  grid-template-columns:var(--rail) minmax(0, 1fr);
-  gap:var(--gap);
-  padding:2.5rem 0;
-  border-top:1px solid var(--rule);
-}
-.section:first-of-type{margin-top:3.5rem}
-.section-label{
-  font-family:var(--mono);
-  font-size:0.6875rem;
-  font-weight:500;
-  text-transform:uppercase;
-  letter-spacing:0.11em;
-  color:var(--ink-faint);
-  line-height:1.5;
-  padding-top:0.35rem;
-  margin:0;
-}
-.section-body > *:first-child{margin-top:0}
-.section-body > *:last-child{margin-bottom:0}
-.section-body p{margin:0 0 1rem; max-width:var(--measure)}
-
-/* ---------- Papers ---------- */
-.paper{margin:0 0 2.25rem}
-.paper:last-child{margin-bottom:0}
-.paper-title{
-  font-family:var(--display);
-  font-size:1.1875rem;
-  font-weight:500;
-  line-height:1.32;
-  letter-spacing:-0.004em;
-  margin:0 0 0.3rem;
-}
-.paper-authors{margin:0 0 0.3rem; color:var(--ink-soft); font-size:0.9375rem}
-.paper-venue{
-  font-family:var(--mono);
-  font-size:0.75rem;
-  letter-spacing:0.015em;
-  color:var(--ink-faint);
-  margin:0;
-}
-.paper-venue .status{color:var(--signal)}
-
-details.abstract{margin:0.7rem 0 0}
-details.abstract summary{
-  font-family:var(--mono);
-  font-size:0.6875rem;
-  text-transform:uppercase;
-  letter-spacing:0.09em;
-  color:var(--ink-faint);
-  cursor:pointer;
-  display:inline-block;
-  padding:0.15rem 0;
-  list-style:none;
-}
-details.abstract summary::-webkit-details-marker{display:none}
-details.abstract summary::before{content:"+ "; color:var(--signal)}
-details.abstract[open] summary::before{content:"\2212 "}
-details.abstract summary:hover{color:var(--signal)}
-details.abstract summary:focus-visible{outline:2px solid var(--signal); outline-offset:3px}
-.abstract-text{
-  font-size:0.9375rem;
-  line-height:1.65;
-  color:var(--ink-soft);
-  border-left:2px solid var(--rule);
-  padding-left:1rem;
-  margin:0.75rem 0 0;
-  max-width:var(--measure);
-}
-
-/* ---------- Figure: the entropy result, shown with its paper ---------- */
-.band-figure{margin:1.25rem 0 0; max-width:var(--measure)}
-.band{display:flex; gap:2px; height:44px; width:100%}
-.band span{
-  flex:1 1 0;
-  background:var(--signal-dim);
-  border-radius:1px;
-  transition:flex-grow 1400ms cubic-bezier(.22,.61,.36,1),
-             background-color 1400ms ease;
-  transition-delay:calc(var(--i) * 28ms);
-}
-.band.settled span{background:var(--rule-soft)}
-.band.settled span[data-hot="1"]{background:var(--signal-dim)}
-.band.settled span[data-hot="2"]{background:var(--signal)}
-.band-caption{
-  font-family:var(--mono);
-  font-size:0.6875rem;
-  line-height:1.55;
-  color:var(--ink-faint);
-  letter-spacing:0.02em;
-  margin:0.6rem 0 0;
-}
-
-/* ---------- Teaching / list rows ---------- */
-.stack{list-style:none; margin:0; padding:0}
-.stack li{
-  display:flex;
-  justify-content:space-between;
-  gap:1.5rem;
-  padding:0.4rem 0;
-  border-bottom:1px solid var(--rule-soft);
-}
-.stack li:last-child{border-bottom:0}
-.stack .when{
-  font-family:var(--mono);
-  font-size:0.75rem;
-  color:var(--ink-faint);
-  white-space:nowrap;
-  padding-top:0.2rem;
-}
-.degree{margin:0 0 1.25rem}
-.degree:last-child{margin-bottom:0}
-.degree h3{font-size:1rem; font-weight:500; margin:0 0 0.1rem}
-.degree p{margin:0; color:var(--ink-soft); font-size:0.9375rem}
-.degree .when{display:block; margin-top:0.15rem}
-
-/* ---------- Footer ---------- */
-.colophon{
-  margin-top:3.5rem;
-  padding-top:1.5rem;
-  border-top:1px solid var(--rule);
-  font-family:var(--mono);
-  font-size:0.6875rem;
-  color:var(--ink-faint);
-  letter-spacing:0.02em;
-}
-
-/* ---------- Mobile ---------- */
-@media (max-width:720px){
-  .wrap{padding:3rem 1.25rem 4rem}
-  .intro{grid-template-columns:1fr; gap:1.75rem}
-  .portrait{max-width:11rem}
-  .section{grid-template-columns:1fr; gap:0.9rem; padding:2rem 0}
-  .section-label{padding-top:0}
-  .band{height:36px}
-  .stack li{flex-direction:column; gap:0.1rem}
-  .stack .when{padding-top:0}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .band span{transition:none}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<nav class="nav">
+  <ul>
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="research.html">Research</a></li>
+  </ul>
+</nav>
+
 <div class="wrap">
+  <h1 class="name">Saptashya Ghosh</h1>
 
-  <header>
-    <h1 class="name">Saptashya Ghosh</h1>
+  <div class="intro">
+    <!-- Save your headshot beside this file as photo.jpg -->
+    <img class="portrait" src="photo.jpg" alt="Saptashya Ghosh">
 
-    <div class="intro">
-      <!-- Save your headshot beside this file as photo.jpg -->
-      <img class="portrait" src="photo.jpg" alt="Saptashya Ghosh">
+    <div>
+      <p>
+        I am a Research Associate in the Information Systems area at the Indian
+        School of Business. I hold a Bachelor's degree in Economics from the
+        University of Calcutta, Kolkata, and a Master's in Economics from Shiv
+        Nadar University, Delhi NCR.
+      </p>
+      <p>
+        My research sits at the intersection of the two fields, using an
+        economist's toolkit to study digital platforms and their welfare effects
+        in digital markets. I am particularly interested in how technological
+        innovation reshapes these platforms; what it displaces, what it leaves
+        untouched; and in how platform design, market structure, and policy shape
+        outcomes for users and firms.
+      </p>
 
-      <div>
-        <p>
-          I am a Research Associate in the Information Systems area at the Indian
-          School of Business. I hold Bachelor's and Master's degrees in Economics,
-          and my research sits at the intersection of the two fields, using an
-          economist's toolkit to study digital platforms and their welfare effects
-          in digital markets. I am broadly interested in how platform design, market
-          structure, and policy shape outcomes for users and firms.
-        </p>
-        <ul class="links">
-          <li><a href="mailto:saptashya_ghosh@isb.edu">saptashya_ghosh@isb.edu</a></li>
-          <li><a href="Ghosh_CV.pdf">Curriculum Vitae</a></li>
-          <li><a href="https://github.com/Saptashya-25">GitHub</a></li>
-          <!-- Add once you have one:
-          <li><a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a></li>
-          -->
-        </ul>
-      </div>
+      <p class="contact">
+        <span class="k">Contact</span>
+        <a href="mailto:saptashya_ghosh@isb.edu">saptashya_ghosh@isb.edu</a>
+      </p>
     </div>
-  </header>
-
-  <main>
-
-    <section class="section">
-      <h2 class="section-label">Working papers</h2>
-      <div class="section-body">
-        <article class="paper">
-          <h3 class="paper-title">
-            <!-- Replace # with the SSRN or PDF link when you have one -->
-            <a href="#">AI at the Fingertips: How Does LLM App Adoption Reshape Smartphone Usage?</a>
-          </h3>
-          <p class="paper-authors">Saptashya Ghosh, Saharsh Agarwal</p>
-          <p class="paper-venue"><span class="status">Under review</span> &nbsp;·&nbsp; Information Systems Research</p>
-
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <p class="abstract-text">
-              The rapid diffusion of large language models (LLMs) is reshaping how users
-              interact with digital technologies. As LLMs become available through
-              dedicated smartphone applications, they may substitute for existing
-              applications or complement them by encouraging broader digital engagement.
-              Using proprietary smartphone usage data from Android users in India and a
-              staggered difference-in-differences design, we document three findings.
-              First, adoption and sustained usage follow different demographic patterns:
-              younger users and men are more likely to adopt, but conditional on adoption,
-              women are more likely to become sustained users. Second, sustained usage
-              concentrates smartphone activity on a smaller set of applications, with
-              lower app diversity persisting for up to 79 weeks after adoption. Third,
-              substitution is concentrated in categories whose tasks overlap with LLM
-              capabilities, namely web browsers, search engines, and writing applications,
-              while social, e-commerce, and other transactional categories remain
-              unaffected. We find little evidence of complementarity. These findings
-              suggest that LLMs are emerging as a new gateway to online information, with
-              implications for market definition, competition policy, and the platforms
-              that depend on search traffic.
-            </p>
-          </details>
-
-          <figure class="band-figure">
-            <div class="band" id="band" aria-hidden="true"></div>
-            <figcaption class="band-caption">
-              Weekly attention across apps, before and after sustained LLM adoption.
-            </figcaption>
-          </figure>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">Policy papers</h2>
-      <div class="section-body">
-        <article class="paper">
-          <h3 class="paper-title">
-            <!-- Replace # with the CAFRAL report link -->
-            <a href="https://drive.google.com/file/d/1seu558JE9u0XIVNvUUyqjzw0HBl2gWT9/view?usp=drive_link">Climate Change and Household Finance</a>
-          </h3>
-          <p class="paper-authors">Saptashya Ghosh, Sankalp Mathur</p>
-          <p class="paper-venue">India Finance Report 2025 &nbsp;·&nbsp; CAFRAL, Reserve Bank of India</p>
-
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <p class="abstract-text">
-              Climate change presents significant challenges to household finances.
-              Expanding financial access to households is crucial for climate adaptation
-              and resilience. Climate vulnerable areas have seen slower growth in loans
-              such as business and mortgage loans, especially by traditional financial
-              intermediaries, while microfinance loans have shown notable growth. FinTechs
-              have recently stepped in, demonstrating how technology can enhance financial
-              support to households impacted by adverse climate shocks.
-            </p>
-          </details>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">Master's thesis</h2>
-      <div class="section-body">
-        <article class="paper">
-          <h3 class="paper-title">
-            <a href="https://drive.google.com/file/d/1CGIdAcZbgf23_TzAub4NtQuCnGz4B6Pu/view?usp=drive_link">Do Political Cycles Alarm Officers? Evidence from the Indian Bureaucracy</a>
-          </h3>
-          <p class="paper-venue">
-            M.S. Economics, Shiv Nadar University &nbsp;·&nbsp;
-            Advised by Arka Roy Chaudhuri
-          </p>
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <p class="abstract-text">
-              Bureaucrats are central to policy implementation, and the decisions they make
-              carry consequences for a wide range of societal outcomes. Yet bureaucratic
-              careers remain exposed to political interference, institutional instability,
-              and corruption, and officers' work is frequently disrupted by political
-              processes. This paper develops an empirical framework for identifying the
-              effect of the electoral cycle on bureaucratic transfers. Using monthly
-              variation in a comprehensive panel of bureaucratic officers spanning 1950 to
-              2020, we document that transfer decisions are significantly shaped by the
-              timing of elections. Transfers rise sharply in the eleven months following an
-              election relative to the remainder of the electoral cycle.
-            </p>
-          </details>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">Education</h2>
-      <div class="section-body">
-        <div class="degree">
-          <h3>Shiv Nadar University, Institution of Eminence</h3>
-          <p>M.S. Economics — first in cohort</p>
-          <span class="when">2021 – 2023</span>
-        </div>
-        <div class="degree">
-          <h3>Scottish Church College, University of Calcutta</h3>
-          <p>B.Sc. (Hons.) Economics</p>
-          <span class="when">2018 – 2021</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">Teaching</h2>
-      <div class="section-body">
-        <p>Teaching assistant, Department of Economics, Shiv Nadar University.</p>
-        <ul class="stack">
-          <li><span>Macroeconomics II (postgraduate)</span><span class="when">Spring 2023</span></li>
-          <li><span>Money and Banking</span><span class="when">Monsoon 2022</span></li>
-          <li><span>Introduction to Microeconomics</span><span class="when">Spring 2022</span></li>
-          <li><span>Game Theory</span><span class="when">Monsoon 2021</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">Contact</h2>
-      <div class="section-body">
-        <p>
-          The best way to reach me is email:
-          <a href="mailto:saptashya_ghosh@isb.edu">saptashya_ghosh@isb.edu</a>.
-          I am based at the ISB campus in Hyderabad.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <p class="colophon">Last updated August 2026 · Hyderabad, India</p>
-
+  </div>
 </div>
 
-<script>
-// Attention band: starts evenly spread, then concentrates — the entropy result.
-(function () {
-  var band = document.getElementById('band');
-  if (!band) return;
+<p class="colophon">Last updated August 2026 · Hyderabad, India</p>
 
-  var shares = [22, 14, 9, 7, 5, 4, 4, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
-  var frag = document.createDocumentFragment();
-
-  shares.forEach(function (s, i) {
-    var bar = document.createElement('span');
-    bar.style.setProperty('--i', i);
-    if (s >= 14) bar.setAttribute('data-hot', '2');
-    else if (s >= 5) bar.setAttribute('data-hot', '1');
-    bar.dataset.share = s;
-    frag.appendChild(bar);
-  });
-  band.appendChild(frag);
-
-  function settle() {
-    band.classList.add('settled');
-    Array.prototype.forEach.call(band.children, function (bar) {
-      bar.style.flexGrow = bar.dataset.share;
-    });
-  }
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    settle();
-  } else {
-    setTimeout(settle, 700);
-  }
-})();
-</script>
 </body>
 </html>
