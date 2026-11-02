@@ -95,14 +95,20 @@ a:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radi
 .intro p:last-of-type{margin-bottom:0}
 
 .contact{
-  margin:1.75rem 0 0;
-  padding-top:1.25rem;
+  margin:1.25rem 0 0;
+  padding-top:1rem;
   border-top:1px solid var(--rule);
   font-family:var(--mono);
   font-size:0.8125rem;
   letter-spacing:0.01em;
+  line-height:1.9;
 }
-.contact .k{color:var(--ink-faint); margin-right:0.5rem}
+.contact .k{
+  display:block;
+  color:var(--ink-faint);
+  margin:0 0 0.15rem;
+}
+.contact a{word-break:break-all}
 
 /* ---------- CV page ---------- */
 .cv-panel{
@@ -269,9 +275,10 @@ details.abstract summary:focus-visible{outline:2px solid var(--signal); outline-
 
 /* ---------- Contact icons ---------- */
 .contact .icon{
+  word-break:normal;
   display:inline-flex;
   align-items:center;
-  margin-left:0.85rem;
+  margin-left:0.6rem;
   vertical-align:-0.3rem;
   color:var(--ink-faint);
   border-bottom:0;
