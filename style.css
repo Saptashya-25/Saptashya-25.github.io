@@ -266,3 +266,16 @@ details.abstract summary:focus-visible{outline:2px solid var(--signal); outline-
   .band span{transition:none}
   .cv-mark{transition:none}
 }
+
+/* ---------- Contact icons ---------- */
+.contact .icon{
+  display:inline-flex;
+  align-items:center;
+  margin-left:0.85rem;
+  vertical-align:-0.3rem;
+  color:var(--ink-faint);
+  border-bottom:0;
+  transition:color 150ms ease;
+}
+.contact .icon:hover{color:var(--signal); border-bottom:0}
+.contact .icon:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radius:2px}
