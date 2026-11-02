@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research — Saptashya Ghosh</title>
-<meta name="description" content="Working papers, policy papers, and master's thesis of Saptashya Ghosh.">
+<meta name="description" content="Work in progress, working papers, policy papers, and master&#39;s thesis of Saptashya Ghosh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -23,15 +23,50 @@
 <div class="wrap">
 
   <section class="section">
+    <h2 class="section-label">Work in progress</h2>
+    <div class="section-body">
+      <article class="paper">
+        <h3 class="paper-title">
+          Where Does Digital Addiction Reside? App Versus Category-Level Habit
+          Formation: Evidence From a Mobile Game Ban
+        </h3>
+        <p class="paper-authors">Saptashya Ghosh, Pranav Jindal, Saharsh Agarwal</p>
+
+        <details class="abstract">
+          <summary>Abstract</summary>
+          <p class="abstract-text">
+            Researchers and policymakers have treated digital products as potentially
+            addictive, but it remains unclear at what level consumers become addicted to
+            a digital product. In this paper, we build a structural model to capture the
+            level of digital addiction and estimate it using a reduced-form equation
+            derived from the model. Using proprietary smartphone usage data from Android
+            users in India and exploiting variation due to a mobile game ban, we intend
+            to capture the extent of digital addiction. There are two central findings of
+            this paper: Firstly, we find that addiction resides at the app level. Own-app
+            stock is positive and significant, ranging from 4.17 to 6.33. Secondly, the
+            level of addiction is not affected by how we define a category. We study the
+            level of digital addiction by varying the definition of the category into
+            narrow and broad classifications. Under both circumstances, we see app-level
+            addiction dominates, with coefficients between 3.02 and 7.50. Both categories
+            are robust across various assumed depreciation parameters for the habit
+            stock. Therefore, the results show that users who have spent more time on an
+            app in recent weeks get addicted to it and are substantially more likely to
+            use it again.
+          </p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
     <h2 class="section-label">Working papers</h2>
     <div class="section-body">
       <article class="paper">
         <h3 class="paper-title">
-          <!-- Replace # with the SSRN or PDF link when you have one -->
-          <a href="#">AI at the Fingertips: How Does LLM App Adoption Reshape Smartphone Usage?</a>
+          AI at the Fingertips: How Does LLM App Adoption Reshape Smartphone Usage?
         </h3>
         <p class="paper-authors">Saptashya Ghosh, Saharsh Agarwal</p>
-        <p class="paper-venue"><span class="status">Under review</span> &nbsp;·&nbsp; Information Systems Research</p>
+        <p class="paper-venue"><span class="status">Submitted</span> &nbsp;·&nbsp; Information Systems Research</p>
 
         <details class="abstract">
           <summary>Abstract</summary>
@@ -56,13 +91,6 @@
             that depend on search traffic.
           </p>
         </details>
-
-        <figure class="band-figure">
-          <div class="band" id="band" aria-hidden="true"></div>
-          <figcaption class="band-caption">
-            Weekly attention across apps, before and after sustained LLM adoption.
-          </figcaption>
-        </figure>
       </article>
     </div>
   </section>
@@ -74,7 +102,7 @@
         <h3 class="paper-title">
           <a href="https://drive.google.com/file/d/1seu558JE9u0XIVNvUUyqjzw0HBl2gWT9/view?usp=drive_link">Climate Change and Household Finance</a>
         </h3>
-        <p class="paper-authors">Saptashya Ghosh, Sankalp Mathur</p>
+        <p class="paper-authors">Saptashya Ghosh, Sankalp Mathur, Rupsha Dey</p>
         <p class="paper-venue">India Finance Report 2025 &nbsp;·&nbsp; CAFRAL, Reserve Bank of India</p>
 
         <details class="abstract">
@@ -124,31 +152,5 @@
   </section>
 
 </div>
-
-<script>
-(function () {
-  var band = document.getElementById('band');
-  if (!band) return;
-  var shares = [22, 14, 9, 7, 5, 4, 4, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
-  var frag = document.createDocumentFragment();
-  shares.forEach(function (s, i) {
-    var bar = document.createElement('span');
-    bar.style.setProperty('--i', i);
-    if (s >= 14) bar.setAttribute('data-hot', '2');
-    else if (s >= 5) bar.setAttribute('data-hot', '1');
-    bar.dataset.share = s;
-    frag.appendChild(bar);
-  });
-  band.appendChild(frag);
-  function settle() {
-    band.classList.add('settled');
-    Array.prototype.forEach.call(band.children, function (bar) {
-      bar.style.flexGrow = bar.dataset.share;
-    });
-  }
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) settle();
-  else setTimeout(settle, 700);
-})();
-</script>
 </body>
 </html>
